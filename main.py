@@ -7,9 +7,8 @@ from api.qqbot import post_to_channel
 from utils.sl import load_record, save_record
 
 # Initialize the logger
-basicConfig()
+basicConfig(level=INFO)
 logger = getLogger(__name__)
-logger.setLevel(INFO)
 
 if __name__ == '__main__':
     logger.info('Starting the process to fetch and post animes')
