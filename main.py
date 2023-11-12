@@ -23,8 +23,8 @@ if __name__ == '__main__':
             download(anime['name'], anime['link'])
 
     save_record(animes)
-    logger.info('Waiting for 7200 seconds before checking download status')
-    sleep(300)
+    logger.info('Waiting for 10 minutes before checking download status')
+    sleep(600)
 
     for anime in animes:
         anime_record_exists = animes_record.get(anime['name'])
