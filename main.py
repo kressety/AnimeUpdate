@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     for anime in animes:
         anime_record_exists = animes_record.get(anime['name'])
-        if (anime_record_exists is not None) and (anime['number'] not in anime_record_exists):
+        if (anime_record_exists is None) or (anime['number'] not in anime_record_exists):
             logger.info(f'Processing new anime: {anime["name"]} Episode: {anime["number"]}')
             check_dir(anime['name'])
             download(anime['name'], anime['url'])
