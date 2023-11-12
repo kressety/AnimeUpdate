@@ -20,11 +20,11 @@ if __name__ == '__main__':
         if (anime_record_exists is None) or (anime['number'] not in anime_record_exists):
             logger.info(f'Processing new anime: {anime["name"]} Episode: {anime["number"]}')
             check_dir(anime['name'])
-            download(anime['name'], anime['url'])
+            download(anime['name'], anime['link'])
 
             logger.info('Waiting for 7200 seconds before checking download status')
             sleep(7200)
-            result = check_download(anime['name'], anime['url'])
+            result = check_download(anime['name'], anime['link'])
             if result:
                 logger.info(f'Posting to channel: {anime["name"]} Episode: {anime["number"]}')
                 post_to_channel(anime['name'], anime['number'], result)
