@@ -44,10 +44,10 @@ def post_to_channel(
         },
         json={
             'target': config['qqbot']['group_id'],
-            'messageChain': {
+            'messageChain': [{
                 'type': 'Plain',
                 'text': f'{name}更新第{number}集啦！\n点此链接观看：{link}'
-            }
+            }]
         }
     )
     print(response.json())
