@@ -55,7 +55,7 @@ def download(name: str, url: str):
     auth_token = _authenticate()
     if auth_token:
         response = post(
-            url=urljoin(config['alist']['base_url'], '/api/fs/mkdir'),
+            url=urljoin(config['alist']['base_url'], '/api/fs/add_aria2'),
             headers={
                 'authorization': str(auth_token)
             },

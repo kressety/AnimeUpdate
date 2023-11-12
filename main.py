@@ -22,6 +22,7 @@ if __name__ == '__main__':
             check_dir(anime['name'])
             download(anime['name'], anime['link'])
 
+    save_record(animes)
     logger.info('Waiting for 7200 seconds before checking download status')
     sleep(7200)
 
@@ -35,5 +36,4 @@ if __name__ == '__main__':
             else:
                 logger.warning(f'Download check failed for {anime["name"]} Episode: {anime["number"]}')
 
-    save_record(animes)
     logger.info('Process completed')
