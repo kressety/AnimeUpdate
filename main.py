@@ -22,8 +22,12 @@ if __name__ == '__main__':
             check_dir(anime['name'])
             download(anime['name'], anime['link'])
 
-            logger.info('Waiting for 7200 seconds before checking download status')
-            sleep(7200)
+    logger.info('Waiting for 7200 seconds before checking download status')
+    sleep(7200)
+
+    for anime in animes:
+        anime_record_exists = animes_record.get(anime['name'])
+        if (anime_record_exists is None) or (anime['number'] not in anime_record_exists):
             result = check_download(anime['name'], anime['link'])
             if result:
                 logger.info(f'Posting to channel: {anime["name"]} Episode: {anime["number"]}')
